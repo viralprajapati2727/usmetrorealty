@@ -1,0 +1,10 @@
+DEFINE('_EW_AGENT_NOT_PUBLISHED',"Agent module which gathers data is not published on frontend! - How to fix it?<br/><br/>
+<u>Joomla:</u><br/>
+1. Go to Extensions -> Module Manager -> find Agent module<br/>
+2. Change Position to some other value (choose some for which you already see some module in frontend - like 'footer'<br/>
+3. Save and refresh extrawatch back-end dashboard again<br/><br/>
+
+<u>Wordpress:</u><br/>
+1. Go to Apperance -> Widgets<br/>
+2. Drag and Drop ExtraWatch agent do placeholder on right to widget that it's already visible in frontend<br/>
+");

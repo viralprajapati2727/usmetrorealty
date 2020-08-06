@@ -1,0 +1,4 @@
+.modal-open .modal-jeditor.bs3 {position:fixed!important;}
+.modal-jeditor-aridocsviewer.bs2 {min-height:250px;max-width:650px;}
+.modal-jeditor-aridocsviewer.bs2 .modal-body {height:100%;max-height:610px;overflow-y:visible!important;}
+.modal-body .adv-settings-container {margin: 10px;}

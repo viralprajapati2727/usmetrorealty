@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset name="details">
+		<field name="id" type="text" default="0" readonly="true" class="readonly" label="JGLOBAL_FIELD_ID_LABEL" description ="JGLOBAL_FIELD_ID_DESC" />
+
+        <!-- details -->
+        <field name="project_file" type="file"
+
+            label="Upload file"
+            description="Upload file"  
+            directory="mysites"/> 
+        <field name="title" type="text" class="inputbox" label="COM_IPROPERTY_DOWNLOAD_TITLE" size="50" description="" required="true" />
+        
+    </fieldset>
+</form>

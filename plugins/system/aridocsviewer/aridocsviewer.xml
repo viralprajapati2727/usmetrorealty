@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0.0" type="plugin" group="system" method="upgrade" client="site">
+	<name>System - ARI Docs Viewer</name>
+	<author>ARI Soft</author>
+	<creationDate>September 2016</creationDate>
+	<copyright>ARI Soft</copyright>
+	<license>GNU/GPL license (http://www.gnu.org/copyleft/gpl.html)</license>
+	<authorEmail>info@ari-soft.com</authorEmail>
+	<authorUrl>www.ari-soft.com</authorUrl>
+	<version>2.1.1</version>
+	<description>ARI_DOCS_VIEWER_PLUGIN</description>
+	<scriptfile>script.php</scriptfile>
+	<files>
+		<filename plugin="aridocsviewer">aridocsviewer.php</filename>
+		<filename>aridocsviewer.xml</filename>
+		<filename>index.html</filename>
+		<folder>fields</folder>
+		<folder>help</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.plg_system_aridocsviewer.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_system_aridocsviewer.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="plugins/system/aridocsviewer/fields">
+				<field type="list" name="engine" default="iframe" label="PLG_ARIDOCSVIEWER_LABEL_VIEWER" description="PLG_ARIDOCSVIEWER_DESCR_VIEWER">
+					<option value="iframe">PLG_ARIDOCSVIEWER_LABEL_IFRAME</option>
+					<option value="article">PLG_ARIDOCSVIEWER_LABEL_ARTICLE</option>
+					<option value="google">PLG_ARIDOCSVIEWER_LABEL_GOOGLE</option>
+                    <option value="office">PLG_ARIDOCSVIEWER_LABEL_OFFICE</option>
+                    <option value="pdfjs">PLG_ARIDOCSVIEWER_LABEL_PDFJS</option>
+				</field>
+				<field type="radio" class="btn-group" name="opt_loadingPane" default="1" label="PLG_ARIDOCSVIEWER_LABEL_LOADINGPANE" description="PLG_ARIDOCSVIEWER_DESCR_LOADINGPANE">
+					<option value="0">PLG_ARIDOCSVIEWER_LABEL_NO</option>
+					<option value="1">PLG_ARIDOCSVIEWER_LABEL_YES</option>
+				</field>
+				<field type="text" name="opt_class" default="" size="15" label="PLG_ARIDOCSVIEWER_LABEL_CSSCLASS" description="PLG_ARIDOCSVIEWER_DESCR_CSSCLASS" />
+				<field type="radio" class="btn-group" name="opt_showDownloadLink" default="0" label="PLG_ARIDOCSVIEWER_LABEL_SHOWDOWNLOADLINK" description="PLG_ARIDOCSVIEWER_DESCR_SHOWDOWNLOADLINK">
+					<option value="0">PLG_ARIDOCSVIEWER_LABEL_NO</option>
+					<option value="1">PLG_ARIDOCSVIEWER_LABEL_YES</option>
+				</field>
+
+				<field type="modal" name="modal" label="" description="" />
+			</fieldset>
+            <fieldset name="advanced">
+                <field type="radio" class="btn-group" name="loadJQuery" default="1" label="PLG_ARIDOCSVIEWER_LABEL_JQLOAD" description="PLG_ARIDOCSVIEWER_DESCR_JQLOAD">
+                    <option value="0">PLG_ARIDOCSVIEWER_LABEL_NO</option>
+                    <option value="1">PLG_ARIDOCSVIEWER_LABEL_YES</option>
+                </field>
+                <field type="radio" class="btn-group" name="callNC" default="1" label="PLG_ARIDOCSVIEWER_LABEL_NOCONFLICT" description="PLG_ARIDOCSVIEWER_DESCR_NOCONFLICT">
+                    <option value="0">PLG_ARIDOCSVIEWER_LABEL_NO</option>
+                    <option value="1">PLG_ARIDOCSVIEWER_LABEL_YES</option>
+                </field>
+            </fieldset>
+		</fields>
+	</config>
+</extension>

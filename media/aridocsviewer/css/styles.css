@@ -1,0 +1,36 @@
+DIV.aridoc-loading {
+	background: transparent url(images/loading.gif) no-repeat center center;
+	position: relative;
+	min-width: 200px;
+	min-height: 250px;
+}
+
+.aridoc-loading-message {
+	display: none;
+}
+
+DIV.aridoc-loading .aridoc-loading-message {
+	display: block;
+	position: absolute;
+	top: 50%;
+	margin-top: 45px;
+	text-align: center !important;
+	width: 100%;
+}
+
+DIV.aridoc-loading IFRAME.aridoc-frame,
+DIV.aridoc-loading .aridoc-dl-container {
+	position: absolute;
+	left: -9999px;
+}
+
+IFRAME.aridoc-frame {
+	display: block;
+	margin: 0 auto;
+	border: none;
+}
+
+.aridoc-dl-container {
+	margin: 0 auto;
+	padding: 3px 0;
+}

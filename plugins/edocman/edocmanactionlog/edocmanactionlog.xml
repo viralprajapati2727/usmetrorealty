@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension version="1.13.0" type="plugin" group="edocman" method="upgrade">
+	<name>Edocman Action log</name>
+	<author>Joomla! Project</author>
+	<creationDate>April 2019</creationDate>
+	<copyright>Copyright (C) 2011 - 2019 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>services@joomdonation.com</authorEmail>
+	<authorUrl>www.joomdonation.org</authorUrl>
+	<version>1.13.0</version>
+	<description>Edocman Action Log plugin</description>
+	<files>
+		<filename plugin="edocmanactionlog">edocmanactionlog.php</filename>
+	</files>
+</extension>

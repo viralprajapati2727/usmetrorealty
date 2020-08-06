@@ -1,0 +1,71 @@
+#hit-row{background: url('arizonasss.jpg') no-repeat;height: 260px;}
+#hit-row header h3.moduleTitle {
+  font-size: 26px;
+  margin-top: 10px;
+}
+
+.check_hit_counter {
+  background: #2FC4E9;
+  border-radius: 50%;
+  color: #000;
+  height: 150px;
+  line-height: 150px;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 150px;
+  position: relative;
+  font-size: 20px;
+}
+
+
+
+.check_hit_counter::before {
+  border: 4px solid white;
+  border-radius: 50%;
+  bottom: 4px;
+  content: "";
+  left: 4px;
+  opacity: 0;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  transition-duration: 0.3s;
+  transition-property: opacity;
+}
+.check_hit_counter:hover::before{
+  opacity: 1;
+}
+
+
+/* Pulse Grow */
+@-webkit-keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+@keyframes hvr-pulse-grow {
+  to {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+.check_hit_counter {
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+}
+.check_hit_counter:hover, .check_hit_counter:focus, .check_hit_counter:active {
+  -webkit-animation-name: hvr-pulse-grow;
+  animation-name: hvr-pulse-grow;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}

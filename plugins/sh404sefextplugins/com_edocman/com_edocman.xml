@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.5" type="plugin" group="sh404sefextplugins" method="upgrade">
+	<name>sh404sef - Edocman component support plugin</name>
+	<author>Dang Thuc Dam</author>
+	<creationDate>2017-09-01</creationDate>
+	<copyright>2017 Ossolution</copyright>
+	<license>http://www.gnu.org/copyleft/gpl.html GNU/GPL</license>
+	<authorEmail>damdt@joomdonation.com</authorEmail>
+	<authorUrl>https://www.joomdonation.com</authorUrl>
+	<version>1.0.0</version>
+	<description>Edocman sh404SEF plugin for sef urls</description>
+	<files>
+		<filename plugin="com_edocman">com_edocman.php</filename>
+		<folder plugin="com_edocman">edocman</folder>
+	</files>
+</extension>

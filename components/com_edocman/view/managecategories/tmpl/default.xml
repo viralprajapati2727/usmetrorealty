@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Manage Categories">
+		<message>
+			Displays Manage Categories. User should have permission to manage categories at Frontend if they want to access to this page
+		</message>
+	</layout>
+</metadata>

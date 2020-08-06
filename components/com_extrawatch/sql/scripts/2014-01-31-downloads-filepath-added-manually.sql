@@ -1,0 +1,1 @@
+ALTER TABLE  `#__extrawatch_dm_paths` ADD  `addedManually` INT(1) NULL DEFAULT NULL;

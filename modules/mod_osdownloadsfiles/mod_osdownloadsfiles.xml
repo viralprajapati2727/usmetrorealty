@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" client="site" method="upgrade">
+    <name>MOD_OSDOWNLOADSFILES</name>
+    <author>Joomlashack</author>
+    <creationDate>December 17 2018</creationDate>
+    <copyright>Copyright (C) 2016-2018 Open Source Training, LLC</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <authorEmail>help@joomlashack.com</authorEmail>
+    <authorUrl>http://www.joomlashack.com</authorUrl>
+    <version>1.13.5</version>
+    <description>MOD_OSDOWNLOADFILES_DESC</description>
+
+    <alledia>
+        <element>osdownloadsfiles</element>
+        <namespace>OSDownloadsFiles</namespace>
+        <license>free</license>
+        <include>AllediaFreeDefaultFiles</include>
+    </alledia>
+
+    <files>
+        <folder>language</folder>
+        <folder>tmpl</folder>
+        <filename module="mod_osdownloadsfiles">mod_osdownloadsfiles.php</filename>
+    </files>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic" addfieldpath="/administrator/components/com_osdownloads/form/fields">
+                <field
+                    name="category"
+                    type="category"
+                    label="COM_OSDOWNLOADS_FILES_FIELD_CATEGORY"
+                    extension="com_osdownloads"
+                    description="COM_OSDOWNLOADS_FILES_FIELD_CATEGORY_DESC" />
+
+                <field
+                    name="link_to"
+                    type="radio"
+                    class="btn-group"
+                    default="download"
+                    label="COM_OSDOWNLOADS_FILES_FIELD_LINK_TO"
+                    description="COM_OSDOWNLOADS_FILES_FIELD_LINK_TO_DESC">
+                        <option value="download">COM_OSDOWNLOADS_FILES_LINK_FILE_DOWNLOAD</option>
+                        <option value="details">COM_OSDOWNLOADS_FILES_LINK_TO_FILE_DESCRIPTION</option>
+                </field>
+
+                <field
+                    name="link_label"
+                    type="text"
+                    label="COM_OSDOWNLOADS_FILES_FIELD_LINK_LABEL"
+                    description="COM_OSDOWNLOADS_FILES_FIELD_LINK_DESC" />
+
+                <field
+                    name="ordering"
+                    type="list"
+                    default="ordering"
+                    label="COM_OSDOWNLOADS_FILES_FIELD_ORDERING_LABEL"
+                    description="COM_OSDOWNLOADS_FILES_FIELD_ORDERING_DESC">
+
+                    <option value="ordering">COM_OSDOWNLOADS_FILES_ORDERING</option>
+                    <option value="name">COM_OSDOWNLOADS_FILES_NAME</option>
+                    <option value="downloaded">COM_OSDOWNLOADS_FILES_DOWNLOAD_COUNTER</option>
+                    <option value="created_time">COM_OSDOWNLOADS_FILES_CREATED_TIME</option>
+                    <option value="modified_time">COM_OSDOWNLOADS_FILES_MODIFIED_TIME</option>
+                </field>
+
+                <field
+                    name="ordering_dir"
+                    type="list"
+                    default="asc"
+                    label="COM_OSDOWNLOADS_FILES_FIELD_ORDERING_DIR_LABEL"
+                    description="COM_OSDOWNLOADS_FILES_FIELD_ORDERING_DIR_DESC">
+
+                    <option value="asc">COM_OSDOWNLOADS_FILES_ASC</option>
+                    <option value="desc">COM_OSDOWNLOADS_FILES_DESC</option>
+                </field>
+
+                <field
+                    name="moduleclass_sfx"
+                    type="text"
+                    label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                    description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+
+                <field
+                    type="customfooter"
+                    name="customfooter"
+                    media="com_osdownloads"
+                    jedurl="https://extensions.joomla.org/extension/osdownloads/" />
+            </fieldset>
+
+            <fieldset
+                name="advanced">
+                <field
+                    name="layout"
+                    type="modulelayout"
+                    label="JFIELD_ALT_LAYOUT_LABEL"
+                    description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

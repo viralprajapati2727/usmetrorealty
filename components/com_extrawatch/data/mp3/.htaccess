@@ -1,0 +1,13 @@
+ <IfModule mod_version.c>
+    <IfVersion >= 2.4>
+	Require all granted
+    </IfVersion>
+    <IfVersion < 2.2>
+	Order deny,allow
+	Allow from all
+	</IfVersion>
+</IfModule>
+
+<IfModule mod_headers.c>
+	Header set X-Robots-Tag "noindex"
+</IfModule>

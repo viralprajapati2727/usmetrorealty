@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0.0" type="plugin" group="editors-xtd" method="upgrade">
+	<name>Button - ARI Docs Viewer</name>
+	<author>ARI Soft</author>
+	<creationDate>July 2018</creationDate>
+	<copyright>ARI Soft</copyright>
+	<license>GNU/GPL license (http://www.gnu.org/copyleft/gpl.html)</license>
+	<authorEmail>info@ari-soft.com</authorEmail>
+	<authorUrl>www.ari-soft.com</authorUrl>
+	<version>2.2.0</version>
+	<description>PLG_EDITOR_XTD_ARIDOCSVIEWER</description>
+	<files>
+		<filename plugin="aridocsviewer">aridocsviewer.php</filename>
+		<filename>aridocsviewer.xml</filename>
+		<filename>index.html</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.plg_editors-xtd_aridocsviewer.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_editors-xtd_aridocsviewer.sys.ini</language>
+	</languages>
+	<media folder="media" destination="aridocsviewer/editor">
+		<folder>css</folder>
+		<folder>js</folder>
+		<folder>tpl</folder>
+		<filename>index.html</filename>
+	</media>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field type="text" name="width" class="input-mini" default="" size="10" label="PLG_EDITOR_XTD_LABEL_WIDTH" description="PLG_EDITOR_XTD_DESCR_WIDTH" />
+				<field type="text" name="height" class="input-mini" default="" size="10" label="PLG_EDITOR_XTD_LABEL_HEIGHT" description="PLG_EDITOR_XTD_DESCR_HEIGHT" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

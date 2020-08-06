@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.0" type="plugin" group="edocman" method="upgrade">
+    <name>EDocman - Google Drive</name>
+    <author>Dang Thuc Dam</author>
+    <creationDate>Apirl 2015</creationDate>
+    <copyright>Ossolution Team</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <authorEmail>contact@joomdonation.com</authorEmail>
+    <authorUrl>www.joomdonation.com</authorUrl>
+    <version>1.0</version>
+    <description>This plugin allows users to upload and store files on Google Drive</description>
+    <files>
+        <filename plugin="googledrive">googledrive.php</filename>
+		<filename plugin="googledrive">Google.php</filename>
+		<folder>vendor</folder>
+		<folder>fields</folder>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic" addfieldpath="/plugins/edocman/googledrive/fields">
+				<field	name="gettoken"
+                        type="gettoken"
+						label=""
+						/>
+				<field	name="google_client_id"
+                        type="text"
+                        label="Client ID"
+                        description=""
+                        class="input-large"
+                        size="50"
+                        required="true" default=""/>
+				<field	name="google_client_secret"
+                        type="text"
+                        label="Client secret"
+                        description=""
+                        class="input-large"
+                        size="50"
+                        required="true" default=""/>
+				<field	name="root_path"
+                        type="text"
+                        label="Root Path"
+                        description=""
+                        class="input-large"
+                        size="50"
+                        default=""/>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

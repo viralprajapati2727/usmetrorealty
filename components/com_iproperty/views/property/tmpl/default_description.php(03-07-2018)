@@ -1,0 +1,112 @@
+<?php
+/**
+ * @version 3.3.3 2015-04-30
+ * @package Joomla
+ * @subpackage Intellectual Property
+ * @copyright (C) 2009 - 2015 the Thinkery LLC. All rights reserved.
+ * @license GNU/GPL see LICENSE.php
+ */
+
+defined( '_JEXEC' ) or die( 'Restricted access');
+$colspan    = ($this->print) ? 12 : 12;
+
+//echo "<pre>"; print_r($this->p); exit;
+?>
+
+<div class="row-fluid ">
+    <div class="span12">
+        <div class="span<?php echo $colspan; ?> pull-left ip-desc-wrapper" >
+		
+			<div class="row-fluid">
+                <div class="span6">
+				
+				<?php if ($this->p->dwelling_type): ?>
+					<dl class="dl-horizontal">
+						<dt><strong><?php echo JText::_('COM_IPROPERTY_DWELLING_TYPE'); ?></strong></dt>
+						<dd><?php echo $this->p->dwelling_type; ?></dd>
+					</dl>
+				<?php endif; ?>
+				
+				<?php if($this->p->subdivision): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_SUB_DIV'); ?></strong></dt>
+                        <dd><?php echo $this->p->subdivision; ?></dd>
+                    </dl>
+                <?php endif; ?>
+				
+				<?php 
+                    $misc_details_right = array('yearbuilt','zoning');
+                    foreach ($misc_details_right as $mdr)
+                    {
+                        if ($this->p->$mdr)
+                        {
+							if($mdr == 'yearbuilt'){
+								$tag = 'year_built';
+							} else {
+								$tag = $mdr;
+							}
+                            ?>
+                            <dl class="dl-horizontal">
+                                <dt><strong><?php echo JText::_('COM_IPROPERTY_'.strtoupper($tag)); ?></strong></dt>
+                                <dd><?php echo $this->p->$mdr; ?></dd>
+                            </dl>
+                            <?php
+                        }
+                    }
+                ?>
+				
+				<?php if ($this->p->county): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_COUNTY'); ?></strong></dt>
+                        <dd><?php echo $this->p->county; ?></dd>
+                    </dl>
+                <?php endif; ?>
+				
+				<?php if ($this->p->region): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_REGION'); ?></strong></dt>
+                        <dd><?php echo $this->p->region; ?></dd>
+                    </dl>
+                <?php endif; ?>
+				
+				 <?php if($this->p->elementary_school): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_ELEMENTRY_SCHOOL'); ?></strong></dt>
+                        <dd><?php echo $this->p->elementary_school; ?></dd>
+                    </dl>
+				<?php endif; ?>
+				<?php if($this->p->middle_school): ?>
+					<dl class="dl-horizontal">
+						<dt><strong><?php echo JText::_('COM_IPROPERTY_MIDDLE_SCHOOL'); ?></strong></dt>
+						<dd><?php echo $this->p->middle_school; ?></dd>
+					</dl>
+				<?php endif; ?>
+				<?php if($this->p->high_school): ?>
+					<dl class="dl-horizontal">
+						<dt><strong><?php echo JText::_('COM_IPROPERTY_HIGH_SCHOOL'); ?></strong></dt>
+						<dd><?php echo $this->p->high_school; ?></dd>
+					</dl>
+				<?php endif; ?>
+				
+				<?php if($this->p->public_remark): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_PUBLIC_REMARK'); ?></strong></dt>
+                        <dd><?php echo $this->p->public_remark; ?></dd>
+                    </dl>
+                <?php endif; ?>
+				
+                
+                </div>
+            </div>
+		
+		
+            
+        </div>
+        <?php if(!$this->print): ?>
+     
+        <?php endif; ?>
+    </div>
+</div>
+<?php if($this->p->listing_office_name): ?>
+<?php echo '<div class="wtplwell" id="ip-disclaimer">Listing is courtesy of '.$this->p->listing_office_name.'</div>'; ?>
+<?php endif; ?>

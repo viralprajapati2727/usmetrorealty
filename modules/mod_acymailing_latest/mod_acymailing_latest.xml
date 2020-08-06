@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0" method="upgrade">
+	<name>AcyMailing Latest Newsletters</name>
+	<creationDate>June 2010</creationDate>
+	<version>1.2.0</version>
+	<author>Acyba</author>
+	<authorEmail>dev@acyba.com</authorEmail>
+	<authorUrl>http://www.acyba.com</authorUrl>
+	<copyright>Copyright (C) 2009-2014 ACYBA SARL - All rights reserved.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
+	<description>Display the latest AcyMailing Newsletters</description>
+	<files>
+		<filename module="mod_acymailing_latest">mod_acymailing_latest.php</filename>
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+	</files>
+	<params addpath="/components/com_acymailing/params">
+		<param name="help" type="help" default="latest" label="Help" description="Click on the help button to get some help" />
+		<param name="lists" type="lists" default="All" label="Lists" description="The latest X Newsletters attached to the selected lists will be displayed on this module" />
+		<param name="nbnews" type="text" size="5" default="5" label="Number of Newsletters" description="Number of Newsletters to display on the module" />
+		<param name="ordering" type="radio" default="senddate" label="Ordering" description="Select the way you want to order your Newsletters" >
+			<option value="senddate">By senddate</option>
+			<option value="mailid">By ID</option>
+		</param>
+		<param name="itemid" type="text" size="5" default="" label="Itemid" description="Menu ID of the archive section. If left empty, the default value from the AcyMailing configuration page will be used"/>
+		<param name="popup" type="radio" default="1" label="Display in a popup" description="Open the Newsletter view in a popup?">
+			<option value="0">JOOMEXT_NO</option>
+			<option value="1">JOOMEXT_YES</option>
+		</param>
+		<param name="senddate" type="radio" default="0" label="Display sent date" description="Should the module display the Newsletter send date?">
+			<option value="0">JOOMEXT_NO</option>
+			<option value="1">JOOMEXT_YES</option>
+		</param>
+		<param name="ownnews" type="radio" default="0" label="Display the user's Newsletters" description="If the user is logged in, should AcyMailing display the Newsletters the user received?">
+			<option value="0">JOOMEXT_NO</option>
+			<option value="1">JOOMEXT_YES</option>
+		</param>
+		<param name="dateFormat" type="text" size="50" default="%B %Y" label="Date format" description="Date format to display on the module" />
+	</params>
+	<params group="advanced">
+		<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="Module Class Suffix" />
+		<param name="cache" type="list" default="1" label="Caching" description="Select whether to cache the content of this module">
+			<option value="1">Use global</option>
+			<option value="0">No caching</option>
+		</param>
+		<param name="cache_time" type="text" default="900" label="Cache Time" description="The time before the module is recached" />
+	</params>
+	<config>
+		<fields name="params" addfieldpath="/components/com_acymailing/params">
+			<fieldset name="basic">
+				<field name="help" type="help" default="latest" label="Help" description="Click on the help button to get some help" />
+				<field name="lists" type="lists" default="All" label="Lists" description="The latest X Newsletters attached to the selected lists will be displayed on this module" />
+			<field name="nbnews" type="text" size="5" default="5" label="Number of Newsletters" description="Number of Newsletters to display on the module" />
+			<field name="ordering" type="radio" default="senddate" label="Ordering" description="Select the way you want to order your Newsletters" >
+				<option value="senddate">By senddate</option>
+				<option value="mailid">By ID</option>
+			</field>
+			<field name="itemid" type="text" size="5" default="" label="Itemid" description="Menu ID of the archive section. If left empty, the default value from the AcyMailing configuration page will be used"/>
+			<field name="popup" type="radio" default="1" label="Display in a popup" description="Open the Newsletter view in a popup?">
+				<option value="0">JOOMEXT_NO</option>
+				<option value="1">JOOMEXT_YES</option>
+			</field>
+			<field name="senddate" type="radio" default="0" label="Display sent date" description="Should the module display the Newsletter send date?">
+				<option value="0">JOOMEXT_NO</option>
+				<option value="1">JOOMEXT_YES</option>
+			</field>
+			<field name="ownnews" type="radio" default="0" label="Display the user's Newsletters" description="If the user is logged in, should AcyMailing display the Newsletters the user received?">
+				<option value="0">JOOMEXT_NO</option>
+				<option value="1">JOOMEXT_YES</option>
+			</field>
+			<field name="dateFormat" type="text" size="50" default="%B %Y" label="Date format" description="Date format to display on the module" />
+		</fieldset>
+			<fieldset name="advanced">
+				<field name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="Module Class Suffix" />
+				<field name="cache" type="list" default="1" label="Caching" description="Select whether to cache the content of this module">
+					<option value="1">Use global</option>
+					<option value="0">No caching</option>
+				</field>
+				<field name="cache_time" type="text" default="900" label="Cache Time" description="The time before the module is recached" />
+			</fieldset>
+		</fields>
+	</config>
+</install>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.3.0" type="package" method="upgrade">
+    <name>Okey DOC package</name>
+    <!-- The following elements are optional and free of formatting contraints -->
+    <creationDate>2017-09-26</creationDate>
+    <packagename>okeydoc</packagename>
+    <author>Lucas Sanner</author>
+    <authorEmail>lucas.sanner@codalia.net</authorEmail>
+    <license>GPL 3.0</license> 
+    <!--  The version string is recorded in the components table -->
+    <version>1.6</version>
+    <!-- The description is optional and defaults to the name -->
+    <description>Okey DOC installation package v.1.6</description>
+
+    <!-- List of extensions to install -->
+    <files>
+        <!-- Component -->
+        <file type="component" id="com_okeydoc">com_okeydoc.zip</file>
+
+        <!-- Module -->
+        <file type="module" id="okeydoc">mod_okeydoc.zip</file>
+
+        <!-- Plugins: content -->
+        <file type="plugin" group="content" id="okeydoc">plg_okeydoc.zip</file>
+
+        <!-- Plugins: editors-xtd -->
+        <file type="plugin" group="editors-xtd" id="okeydoc">plg_editors-xtd_okeydoc.zip</file>
+    </files>
+
+    <!-- Installation script -->
+    <scriptfile>pkg_script.php</scriptfile>
+
+    <!-- Update servers -->
+    <updateservers>
+        <server type="extension" priority="1" name="Okey DOC Extension">http://codalia.net/updates/pkg_okeydoc.xml</server>
+    </updateservers>
+</extension>

@@ -1,0 +1,405 @@
+<?php
+/**
+ * @version 3.3.3 2015-04-30
+ * @package Joomla
+ * @subpackage Intellectual Property
+ * @copyright (C) 2009 - 2015 the Thinkery LLC. All rights reserved.
+ * @license GNU/GPL see LICENSE.php
+ */
+
+defined( '_JEXEC' ) or die( 'Restricted access');
+$colspan    = ($this->print) ? 12 : 12;
+//echo "<pre>"; print_r($this->p); exit;
+?>
+
+<div class="row-fluid">
+    <div class="span12">
+        <div class="span<?php echo $colspan; ?> pull-left ip_details_wrapper">
+            <div class="row-fluid">
+                <div class="span6">
+                <?php if ($this->p->property_type): 
+                        if($this->p->property_type == 'A'){
+                            $property_type = 'Residential';
+                        }else if($this->p->property_type == 'B'){
+                            $property_type = 'Residential Rental';
+                        }else if($this->p->property_type == 'C'){
+                            $property_type = 'Land and Lots';
+                        } else if($this->p->property_type == 'D'){
+                            $property_type = 'Comm/Industry Sale';
+                        } else if($this->p->property_type == 'E'){
+                            $property_type = 'Comm/Industry Lease';
+                        } else if($this->p->property_type == 'F'){
+                            $property_type = 'Multiple Dwellings';
+                        }
+                ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_PROPERTY_TYPE'); ?></strong></dt>
+                        <dd><?php echo $property_type; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if ($this->p->dwelling_type): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_DWELLING_TYPE'); ?></strong></dt>
+                        <dd><?php echo $this->p->dwelling_type; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if ($this->p->price): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_PRICE_SQFT'); ?></strong></dt>
+                        <dd><?php
+                                if(strpos($this->p->price, '$') == 0){
+                                    echo "$ ".$this->p->price;
+                                }
+                                else{
+                                    echo $this->p->price;
+                                }
+                        ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if ($this->p->postcode): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_ZIPCODE'); ?></strong></dt>
+                        <dd><?php echo $this->p->postcode; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if ($this->p->street_num): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_STREET_NUM'); ?></strong></dt>
+                        <dd><?php echo $this->p->street_num; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if ($this->p->blog_num): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_BLOG_NUM'); ?></strong></dt>
+                        <dd><?php echo $this->p->blog_num; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if ($this->p->street_compass): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_COMPASS'); ?></strong></dt>
+                        <dd><?php echo $this->p->street_compass; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if ($this->p->street): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_STREET_NAME'); ?></strong></dt>
+                        <dd><?php echo $this->p->street; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if ($this->p->country): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_COUNTRY'); ?></strong></dt>
+                        <dd><?php echo ipropertyHTML::getCountryName($this->p->country); ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if ($this->p->locstate): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_STATE'); ?></strong></dt>
+                        <dd><?php echo ipropertyHTML::getStateName($this->p->locstate); ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if ($this->p->city): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_CITY'); ?></strong></dt>
+                        <dd><?php echo ipropertyHTML::getCityName($this->p->city); ?></dd>
+                    </dl>
+                    <?php endif; ?>
+
+                    <?php if ($this->p->street_suffix): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_SUFFIX'); ?></strong></dt>
+                        <dd><?php echo $this->p->street_suffix; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if ($this->p->interior_levels): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_INTERIOR_LEVEL'); ?></strong></dt>
+                        <dd><?php echo $this->p->interior_levels; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                     <?php if ($this->p->total_units && $this->p->total_units > 1): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_TOTALUNITS'); ?></strong></dt>
+                        <dd><?php echo $this->p->total_units; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if ($this->p->beds): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_BEDS'); ?></strong></dt>
+                        <dd><?php echo $this->p->beds; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if ($this->p->baths && $this->p->baths != '0.00'): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_BATHS'); ?></strong></dt>
+                        <dd><?php echo $this->p->baths; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if ($this->p->pool): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_POOL'); ?></strong></dt>
+                        <dd><?php echo $this->p->pool; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if ($this->p->sqft): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo (!$this->settings->measurement_units) ? JText::_('COM_IPROPERTY_SQFT' ) : JText::_('COM_IPROPERTY_SQM'); ?></strong></dt>
+                        <dd><?php echo $this->p->formattedsqft; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if ($this->p->lotsize): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_LOT_SIZE' ); ?></strong></dt>
+                        <dd><?php echo $this->p->lotsize; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if ($this->p->total_cover_space): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_TOTAL_PARKING_SPACES' ); ?></strong></dt>
+                        <dd><?php echo $this->p->total_cover_space; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if ($this->p->building_style): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_BUILDING_STYLE' ); ?></strong></dt>
+                        <dd><?php echo $this->p->building_style; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if ($this->p->fireplace): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_FIREPLACE' ); ?></strong></dt>
+                        <dd><?php echo $this->p->fireplace; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if ($this->p->kitchen_features): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_KITCHEN_FEATURE' ); ?></strong></dt>
+                        <dd><?php echo $this->p->kitchen_features; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                     <?php if ($this->p->special_listing_cond): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_SPECIAL_LISTING' ); ?></strong></dt>
+                        <dd><?php echo $this->p->special_listing_cond; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if ($this->p->technology): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_TECHNOLOGY' ); ?></strong></dt>
+                        <dd><?php echo $this->p->technology; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if ($this->p->unbranded_virtual_tour): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_VIRTUAL_TOUR' ); ?></strong></dt>
+                        <dd><?php echo $this->p->unbranded_virtual_tour; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if ($this->p->current_use): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_CURRENT_USE' ); ?></strong></dt>
+                        <dd><?php echo $this->p->current_use; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if ($this->p->stories): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_STORIES' ); ?></strong></dt>
+                        <dd><?php echo $this->p->stories; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if ($this->p->zoning): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_ZONING' ); ?></strong></dt>
+                        <dd><?php echo $this->p->zoning; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php 
+                    
+                    $misc_details_left = array('lot_acres','lot_type','heat','cool','fuel','siding','roof','reception','tax','income');
+                    
+                    foreach ($misc_details_left as $mdl)
+                    {
+                        if ($this->p->$mdl)
+                        {
+                            ?>
+                            <dl class="dl-horizontal">
+                                <dt><strong><?php echo JText::_('COM_IPROPERTY_'.strtoupper($mdl)); ?></strong></dt>
+                                <dd><?php echo $this->p->$mdl; ?></dd>
+                            </dl>
+                            <?php
+                        }
+                    }
+                    ?>
+                </div>
+                <div class="span6">
+                <?php if($this->p->assessor_number): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_ASSESSOR_NO'); ?></strong></dt>
+                        <dd><?php echo $this->p->assessor_number; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if($this->p->marketing_name): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_MARKETING_NAME'); ?></strong></dt>
+                        <dd><?php echo $this->p->marketing_name; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if($this->p->builder_name): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_BUILDER_NAME'); ?></strong></dt>
+                        <dd><?php echo $this->p->builder_name; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if($this->p->auction): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_AUCTION'); ?></strong></dt>
+                        <dd><?php echo $this->p->auction; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if($this->p->planned_comm_name): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_PLANN_COM_NAME'); ?></strong></dt>
+                        <dd><?php echo $this->p->planned_comm_name; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if($this->p->types): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_TYPE'); ?></strong></dt>
+                        <dd><?php echo $this->p->types; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if($this->p->elementary_school): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_ELEMENTRY_SCHOOL'); ?></strong></dt>
+                        <dd><?php echo $this->p->elementary_school; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if($this->p->middle_school): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_MIDDLE_SCHOOL'); ?></strong></dt>
+                        <dd><?php echo $this->p->middle_school; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if($this->p->high_school): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_HIGH_SCHOOL'); ?></strong></dt>
+                        <dd><?php echo $this->p->high_school; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if($this->p->subdivision): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_SUB_DIV'); ?></strong></dt>
+                        <dd><?php echo $this->p->subdivision; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if($this->p->legal_township): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_LEGAL_TOWNSHIP'); ?></strong></dt>
+                        <dd><?php echo $this->p->legal_township; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if($this->p->legal_range): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_LEGAL_RANGE'); ?></strong></dt>
+                        <dd><?php echo $this->p->legal_range; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if($this->p->legal_section): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_LEGAL_SECTION'); ?></strong></dt>
+                        <dd><?php echo $this->p->legal_section; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                     <?php if($this->p->legal_lot_num): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_LOT_NUM'); ?></strong></dt>
+                        <dd><?php echo $this->p->legal_lot_num; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if($this->p->association_hoa_fee_yes): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_ASSOCIATION_FEE'); ?></strong></dt>
+                        <dd><?php echo $this->p->association_hoa_fee_yes; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if($this->p->association_hoa_fee): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_HOA_FEE'); ?></strong></dt>
+                        <dd><?php echo $this->p->association_hoa_fee; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                     <?php if($this->p->association_hoa_fee_name): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_HOA_FEE_NAME'); ?></strong></dt>
+                        <dd><?php echo $this->p->association_hoa_fee_name; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if($this->p->association_hoa2_fee_yes): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_HOA2_FEE_YES'); ?></strong></dt>
+                        <dd><?php echo $this->p->association_hoa2_fee_yes; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if($this->p->association_hoa2_fee): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_HOA2_FEE'); ?></strong></dt>
+                        <dd><?php echo $this->p->association_hoa2_fee; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if($this->p->custom_hoa2name_key): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_HOA2_FEE_NAME'); ?></strong></dt>
+                        <dd><?php echo $this->p->custom_hoa2name_key; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php 
+                    $misc_details_right = array('yearbuilt','zoning','propview','school_district','style','garage_type','garage_size');
+                    foreach ($misc_details_right as $mdr)
+                    {
+                        if ($this->p->$mdr)
+                        {
+							if($mdr == 'yearbuilt'){
+								$tag = 'year_built';
+							} else {
+								$tag = $mdr;
+							}
+                            ?>
+                            <dl class="dl-horizontal">
+                                <dt><strong><?php echo JText::_('COM_IPROPERTY_'.strtoupper($tag)); ?></strong></dt>
+                                <dd><?php echo $this->p->$mdr; ?></dd>
+                            </dl>
+                            <?php
+                        }
+                    }
+                    ?>
+                    <?php if($this->p->frontage): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_FRONTAGE'); ?></strong></dt>
+                        <dd><?php echo JText::_('COM_IPROPERTY_YES'); ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if($this->p->reo): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_REO'); ?></strong></dt>
+                        <dd><?php echo JText::_('COM_IPROPERTY_YES'); ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if($this->p->hoa): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_HOA'); ?></strong></dt>
+                        <dd><?php echo JText::_('COM_IPROPERTY_YES'); ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                    <?php if($this->p->public_remark): ?>
+                    <dl class="dl-horizontal">
+                        <dt><strong><?php echo JText::_('COM_IPROPERTY_PUBLIC_REMARK'); ?></strong></dt>
+                        <dd><?php echo $this->p->public_remark; ?></dd>
+                    </dl>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+        <?php if(!$this->print): ?>
+        <?php endif; ?>
+    </div>
+</div>

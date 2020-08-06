@@ -1,0 +1,16 @@
+ <IfModule mod_version.c>
+    <IfVersion >= 2.5>
+	Require all granted
+    </IfVersion>
+    <IfVersion < 2.5>
+	Order deny,allow
+	Allow from all
+	</IfVersion>
+</IfModule>
+
+<IfModule mod_headers.c>
+	Header set X-Robots-Tag "noindex"
+	<FilesMatch "\.(css)$">
+	Header set Cache-Control "max-age=290304000, public"
+	</FilesMatch>
+</IfModule>
